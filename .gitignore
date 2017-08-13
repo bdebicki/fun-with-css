@@ -1,0 +1,7 @@
+.idea
+.DS_Store
+npm-debug.log
+/node_modules
+/css-modules/node_modules
+/styled-components/node_modules
+/styled-components/dist/bundle.js
