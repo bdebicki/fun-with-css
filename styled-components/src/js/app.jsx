@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { injectGlobal } from 'styled-components';
-import { ReactWrapper, Headline, Title } from './layout/layoutBuilders';
+import { ReactWrapper, Headline, Title } from './layout/layoutBuilders-styles';
 
 injectGlobal`
   * {

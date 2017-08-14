@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 export const ReactWrapper = styled.div`
   width: 800px;
   margin: 0 auto;
