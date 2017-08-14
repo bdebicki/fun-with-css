@@ -1,0 +1,152 @@
+@btnSize-base: 34px;
+@btnSize-small: 24px;
+@btnSize-large: 50px;
+@btnPadding-base: 0 20px;
+@btnPadding-small: 0 10px;
+@btnPadding-large: 0 24px;
+
+// TODO: Check is this possible to remove `size` and `color` variables from `.icon-*`
+// TODO: What about :focus and :active state?
+
+.btn {
+	display: flex;
+	height: @btnSize-base;
+	padding: @btnPadding-base;
+	border: 0;
+	border-radius: 2px;
+	align-items: center;
+	justify-content: center;
+	background: @blue-base;
+	color: #fff;
+	font-family: @fontFamily-base;
+	font-size: @fontSize-base;
+	line-height: @lineHeight-base;
+	text-decoration: none;
+	user-select: none;
+
+	&:hover {
+		background: @blue-lighten10;
+	}
+
+	&[class*='icon-'] {
+		&:before {
+			margin-right: 10px;
+			position: static !important;
+			color: inherit !important;
+			font-size: 100% !important;
+			line-height: 100% !important;
+		}
+	}
+
+	&.light-weight {
+		border: 1px solid @blue-lighten30;
+		background: none;
+		color: @blue-base;
+
+		&:hover {
+			border-color: @blue-base;
+			background: @blue-base;
+			color: #fff;
+		}
+
+		&.neutral-style {
+			border-color: @silver-darken5;
+			background: none;
+
+			&:hover {
+				border-color: @silver-lighten1;
+				background: @silver-lighten1;
+				color: @gray-lighten5;
+			}
+		}
+		&.success-style {
+			border-color: fade(@green-base, 30%);
+			background: @green-pale;
+			color: @green-base;
+
+			&:hover {
+				border-color: @green-base;
+				background: @green-base;
+				color: #fff;
+			}
+		}
+		&.danger-style {
+			border-color: fade(@red-base, 30%);
+			background: @red-pale;
+			color: @red-darken5;
+
+			&:hover {
+				border-color: @red-darken5;
+				background: @red-darken5;
+				color: #fff;
+			}
+		}
+
+		&.is-working {
+			&:after {
+				border-color: @blue-base;
+			}
+		}
+	}
+
+	&.neutral-style {
+		background: @silver-base;
+		color: @gray-lighten10;
+
+		&:hover {
+			background: @silver-darken5;
+			color: @gray-lighten5;
+		}
+	}
+	&.success-style {
+		background: @green-base;
+
+		&:hover {
+			background: @green-lighten10;
+		}
+	}
+	&.danger-style {
+		background: @red-lighten5;
+
+		&:hover {
+			background: @red-base;
+		}
+	}
+
+	&.large-size {
+		height: @btnSize-large;
+		padding: @btnPadding-large;
+	}
+	&.small-size {
+		height: @btnSize-small;
+		padding: @btnPadding-small;
+		font-size: @fontSize-textSmall;
+		line-height: @lineHeight-textSmall;
+
+		&[class*='icon-'] {
+			&:before {
+				margin-right: 5px;
+			}
+		}
+	}
+	&.stretched-size {
+		width: 100%;
+	}
+
+	&.is-working {
+		position: relative;
+		color: transparent;
+		pointer-events: none;
+
+		.spinner(@color: #fff, @size: 16px, @weight: 2px);
+
+		&[class*='icon-'] {
+			&:before {
+				display: none;
+			}
+		}
+	}
+	&:disabled {
+		.disabled(@opacity: 0.4);
+	}
+}

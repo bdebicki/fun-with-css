@@ -1,0 +1,80 @@
+@btnIconSize-base: 30px;
+@btnIconSize-small: 24px;
+@btnIconSize-tiny: 14px;
+
+// TODO: Add correct icon for save (Topbar in editor)
+// TODO: WTF with `.dashboard-link`
+// TODO: IMO tooltips for `.icon` should behavior like clouds from `uxpin-shared-components`
+// TODO: Tabs should be fully `.icon`?
+// TODO: Add tooltip for `.icon`
+
+.btn-icon {
+	display: flex;
+	width: @btnIconSize-base;
+	height: @btnIconSize-base;
+	border-radius: 2px;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	color: @gray-lighten25;
+	font-size: @fontSize-base;
+	line-height: @lineHeight-base;
+
+	&:hover,
+	&.is-selected {
+		&:not(button) {
+			&:not(a) {
+				background: @silver-darken5;
+
+				.outline-style& {
+					border-color: @silver-darken5;
+				}
+			}
+		}
+	}
+
+	&[class*='icon-'] {
+		&:before {
+			position: static !important;
+			color: inherit !important;
+			font-size: 100% !important;
+			line-height: 100% !important;
+		}
+	}
+
+	&.outline-type {
+		border: 1px solid @silver-darken1;
+
+		&:hover,
+		&.is-selected {
+			&:not(button) {
+				&:not(a) {
+					border-color: @silver-darken5;
+				}
+			}
+		}
+	}
+
+	&.small-size {
+		width: @btnIconSize-small;
+		height: @btnIconSize-small;
+	}
+	&.tiny-size {
+		width: @btnIconSize-tiny;
+		height: @btnIconSize-tiny;
+
+		&:hover {
+			background: none;
+			color: @blue-base;
+		}
+	}
+
+	&.stretched-size {
+		width: 100%;
+		border-radius: 0;
+	}
+
+	&:disabled {
+		.disabled(@opacity: 0.2);
+	}
+}
