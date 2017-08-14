@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { injectGlobal } from 'styled-components';
 import { ReactWrapper, Headline, Title } from './layout/layoutBuilders-styles';
+import { Button } from './components/button/button-styles';
+import { FONT_FAMILY_BASE, FONT_SIZE_BASE, LINE_HEIGHT_BASE, TEXT_COLOR_BASE } from './tokens/typography'
 
 injectGlobal`
   * {
@@ -14,10 +16,10 @@ injectGlobal`
     }
   }
   
-  img, fieldset {
+  img, fieldsetm, button {
     border: none;
   }
-  a, object {
+  a, object, button {
     outline: none !important;
   }
   
@@ -33,9 +35,10 @@ injectGlobal`
   body {
     min-width: 320px;
     height: 100%;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    line-height: 18px;
+    color: ${TEXT_COLOR_BASE};
+    font-family: ${FONT_FAMILY_BASE};
+    font-size: ${FONT_SIZE_BASE};
+    line-height: ${LINE_HEIGHT_BASE};
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -55,6 +58,9 @@ export default class App extends React.Component {
       <ReactWrapper>
         <Title>fun with css</Title>
         <Headline>styled components</Headline>
+        <div>
+          <Button>boczek</Button>
+        </div>
       </ReactWrapper>
     )
   }
