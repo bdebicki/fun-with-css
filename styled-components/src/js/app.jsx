@@ -1,6 +1,6 @@
 import React from 'react';
-
-import styled, {injectGlobal} from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
+import { ReactWrapper, Headline, Title } from './layout/layoutBuilders';
 
 injectGlobal`
   * {
@@ -34,12 +34,13 @@ injectGlobal`
     min-width: 320px;
     height: 100%;
     font-family: Arial, sans-serif;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 14px;
+    line-height: 18px;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-size:100%;
+    display: block;
+    font-size: 100%;
     font-weight: bold;
   }
   
@@ -48,15 +49,13 @@ injectGlobal`
   }
 `;
 
-const Title = styled.h1`
-  color: #333;
-  font-size: 16px;
-`;
-
 export default class App extends React.Component {
   render() {
     return (
-      <Title>styled components</Title>
+      <ReactWrapper>
+        <Title>fun with css</Title>
+        <Headline>styled components</Headline>
+      </ReactWrapper>
     )
   }
 }
