@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BLUE_BASE, BLUE_LIGHTEN_10, BLUE_LIGHTEN_30 } from '../../tokens/colors'
+import { SILVER, GRAY, BLUE, RED, GREEN } from '../../tokens/colors'
 import { FONT_FAMILY_BASE, FONT_SIZE_BASE, FONT_SIZE_SMALL, LINE_HEIGHT_BASE, LINE_HEIGHT_SMALL } from '../../tokens/typography'
 
 const BTN_SHARED_PROPS = {
@@ -22,31 +22,69 @@ export const Button = styled.button`
 	font-family: ${FONT_FAMILY_BASE};
 	text-decoration: none;
 	user-select: none;
-		
+	
 	${props => {
-	  if (props.lightWeight) {
+	  if (props.neutralStyle && !props.lightWeight) {
 	    return `
-	      border-color: ${BLUE_LIGHTEN_30};
-        background: none;
-        color: ${BLUE_BASE};
-  
-        &:hover {
-          border-color: ${BLUE_BASE};
-          background: ${BLUE_BASE};
-          color: #fff;
-        }
-    `;
+	      border-color: ${SILVER.BASE};
+	      background: ${SILVER.BASE};
+	      color: ${SILVER.LIGHTEN_10};
+	      
+	      &:hover {
+          border-color: ${SILVER.DARKEN_5};
+          background: ${SILVER.DARKEN_5};
+          color: ${SILVER.LIGHTEN_5};
+	      }
+	    `;
+    } else if (props.successStyle && !props.lightWeight) {
+      return `
+	      border-color: ${GREEN.BASE};
+	      background: ${GREEN.BASE};
+        color: #fff;
+	      
+	      &:hover {
+          border-color: ${GREEN.LIGHTEN_10};
+          background: ${GREEN.LIGHTEN_10};
+	      }
+	    `;
+    } else if (props.dangerStyle && !props.lightWeight) {
+      return `
+	      border-color: ${RED.LIGHTEN_5};
+	      background: ${RED.LIGHTEN_5};
+        color: #fff;
+	      
+	      &:hover {
+          border-color: ${RED.BASE};
+          background: ${RED.BASE};
+	      }
+	    `;
     } else {
-	    return `
- 	      border-color: ${BLUE_BASE};
-        background: ${BLUE_BASE};
+      return `
+ 	      border-color: ${BLUE.BASE};
+        background: ${BLUE.BASE};
         color: #fff;
         
         &:hover {
-	        border-color: ${BLUE_LIGHTEN_10};
-          background: ${BLUE_LIGHTEN_10};
+	        border-color: ${BLUE.LIGHTEN_10};
+          background: ${BLUE.LIGHTEN_10};
         }
 	    `;
+    }
+  }}
+		
+	${props => { // weight styles props
+	  if (props.lightWeight) {
+      return `
+	      border-color: ${BLUE.LIGHTEN_30};
+        background: none;
+        color: ${BLUE.BASE};
+  
+        &:hover {
+          border-color: ${BLUE.BASE};
+          background: ${BLUE.BASE};
+          color: #fff;
+        }
+    `;
     }
   }}
 	
@@ -75,7 +113,7 @@ export const Button = styled.button`
     }
   }}
   
-  ${props => {
+  ${props => { // width props
     if (props.strechedSize) {
       return `
         width: 100%;
