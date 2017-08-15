@@ -1,5 +1,5 @@
 {
-  "name": "fun-with-styles-styled-components",
+  "name": "fun-with-styles-webpack-build",
   "version": "1.0.0",
   "author": "Bartosz Dębicki",
   "repository": {
@@ -29,6 +29,8 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.5.10",
     "styled-components": "^2.1.2"
   }
 }
