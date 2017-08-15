@@ -100,11 +100,11 @@ export default class App extends React.Component {
         </ElementContainer>
         <ElementContainer>
           <Button lightWeight largeSize>boczek</Button>
-          <ElementDescription>default light-weight large-size button</ElementDescription>
+          <ElementDescription>light-weight large-size button</ElementDescription>
         </ElementContainer>
         <ElementContainer>
           <Button lightWeight smallSize>boczek</Button>
-          <ElementDescription>default light-weight small-size button</ElementDescription>
+          <ElementDescription>light-weight small-size button</ElementDescription>
         </ElementContainer>
         <ElementContainer>
           <Button strechedSize>boczek</Button>
@@ -120,15 +120,15 @@ export default class App extends React.Component {
         </ElementContainer>
         <ElementContainer>
           <Button lightWeight strechedSize>boczek</Button>
-          <ElementDescription>default light-weight stretched-size button</ElementDescription>
+          <ElementDescription>light-weight stretched-size button</ElementDescription>
         </ElementContainer>
         <ElementContainer>
           <Button lightWeight largeSize strechedSize>boczek</Button>
-          <ElementDescription>default light-weight large-size stretched-size button</ElementDescription>
+          <ElementDescription>light-weight large-size stretched-size button</ElementDescription>
         </ElementContainer>
         <ElementContainer>
           <Button lightWeight smallSize strechedSize>boczek</Button>
-          <ElementDescription>default light-weight small-size stretched-size button</ElementDescription>
+          <ElementDescription>light-weight small-size stretched-size button</ElementDescription>
         </ElementContainer>
       </ReactWrapper>
     )
