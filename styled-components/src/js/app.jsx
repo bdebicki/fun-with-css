@@ -107,12 +107,28 @@ export default class App extends React.Component {
           <ElementDescription>default light-weight small-size button</ElementDescription>
         </ElementContainer>
         <ElementContainer>
-          <Button>boczek</Button>
+          <Button strechedSize>boczek</Button>
           <ElementDescription>default stretched-size button</ElementDescription>
         </ElementContainer>
         <ElementContainer>
-          <Button lightWeight>boczek</Button>
+          <Button largeSize strechedSize>boczek</Button>
+          <ElementDescription>default large-size stretched-size button</ElementDescription>
+        </ElementContainer>
+        <ElementContainer>
+          <Button smallSize strechedSize>boczek</Button>
+          <ElementDescription>default small-size stretched-size button</ElementDescription>
+        </ElementContainer>
+        <ElementContainer>
+          <Button lightWeight strechedSize>boczek</Button>
           <ElementDescription>default light-weight stretched-size button</ElementDescription>
+        </ElementContainer>
+        <ElementContainer>
+          <Button lightWeight largeSize strechedSize>boczek</Button>
+          <ElementDescription>default light-weight large-size stretched-size button</ElementDescription>
+        </ElementContainer>
+        <ElementContainer>
+          <Button lightWeight smallSize strechedSize>boczek</Button>
+          <ElementDescription>default light-weight small-size stretched-size button</ElementDescription>
         </ElementContainer>
       </ReactWrapper>
     )

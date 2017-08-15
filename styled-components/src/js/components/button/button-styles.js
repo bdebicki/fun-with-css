@@ -48,4 +48,12 @@ export const Button = styled.button`
       `;
     }
   }}
+  
+  ${props => {
+    if (props.strechedSize) {
+      return `
+        width: 100%;
+      `;
+    }  
+  }}
 `;
