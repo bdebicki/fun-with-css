@@ -30,7 +30,6 @@ export default class App extends React.Component {
         <h5 className="title">fun with css</h5>
         <h1 className="headline">webpack build</h1>
         {BTNS_LIST.map((item) => {
-          console.log(item.classes);
           return(
             <div className="elementContainer">
               <Button className={item.classes}>boczek</Button>
