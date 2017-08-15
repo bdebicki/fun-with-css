@@ -17,10 +17,11 @@ export const Button = styled.button`
 	height: ${BTN_SHARED_PROPS.SIZE_BASE};
 	padding: ${BTN_SHARED_PROPS.PADDING_BASE};
 	border-radius: 2px;
+	border: 1px solid ${BLUE_BASE};
 	align-items: center;
 	justify-content: center;
-	background: ${BLUE_BASE};
-	color: #fff;
+	background: ${props => props.lightWeight ? 'none' : BLUE_BASE};
+	color: ${props => props.lightWeight ? BLUE_BASE : '#fff'};
 	font-family: ${FONT_FAMILY_BASE};
 	font-size: ${FONT_SIZE_BASE};
 	line-height: ${LINE_HEIGHT_BASE};
