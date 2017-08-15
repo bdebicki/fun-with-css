@@ -91,19 +91,19 @@ export default class App extends React.Component {
           <ElementDescription>light-weight danger-style button</ElementDescription>
         </ElementContainer>
         <ElementContainer>
-          <Button lightWeight>boczek</Button>
+          <Button largeSize>boczek</Button>
           <ElementDescription>default large-size button</ElementDescription>
         </ElementContainer>
         <ElementContainer>
-          <Button>boczek</Button>
+          <Button smallSize>boczek</Button>
           <ElementDescription>default small-size button</ElementDescription>
         </ElementContainer>
         <ElementContainer>
-          <Button lightWeight>boczek</Button>
+          <Button lightWeight largeSize>boczek</Button>
           <ElementDescription>default light-weight large-size button</ElementDescription>
         </ElementContainer>
         <ElementContainer>
-          <Button lightWeight>boczek</Button>
+          <Button lightWeight smallSize>boczek</Button>
           <ElementDescription>default light-weight small-size button</ElementDescription>
         </ElementContainer>
         <ElementContainer>
