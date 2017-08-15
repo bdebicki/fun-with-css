@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BLUE_BASE } from '../../tokens/colors'
+import { BLUE_BASE, BLUE_LIGHTEN_10, BLUE_LIGHTEN_30 } from '../../tokens/colors'
 import { FONT_FAMILY_BASE, FONT_SIZE_BASE, FONT_SIZE_SMALL, LINE_HEIGHT_BASE, LINE_HEIGHT_SMALL } from '../../tokens/typography'
 
 const BTN_SHARED_PROPS = {
@@ -15,14 +15,40 @@ const BTN_SHARED_PROPS = {
 export const Button = styled.button`
 	display: flex;
 	border-radius: 2px;
-	border: 1px solid ${BLUE_BASE};
+	border-width: 1px;
+	border-style: solid;
 	align-items: center;
 	justify-content: center;
-	background: ${props => props.lightWeight ? 'none' : BLUE_BASE};
-	color: ${props => props.lightWeight ? BLUE_BASE : '#fff'};
 	font-family: ${FONT_FAMILY_BASE};
 	text-decoration: none;
 	user-select: none;
+		
+	${props => {
+	  if (props.lightWeight) {
+	    return `
+	      border-color: ${BLUE_LIGHTEN_30};
+        background: none;
+        color: ${BLUE_BASE};
+  
+        &:hover {
+          border-color: ${BLUE_BASE};
+          background: ${BLUE_BASE};
+          color: #fff;
+        }
+    `;
+    } else {
+	    return `
+ 	      border-color: ${BLUE_BASE};
+        background: ${BLUE_BASE};
+        color: #fff;
+        
+        &:hover {
+	        border-color: ${BLUE_LIGHTEN_10};
+          background: ${BLUE_LIGHTEN_10};
+        }
+	    `;
+    }
+  }}
 	
 	${props => { // sizes props
     if (props.largeSize) {
