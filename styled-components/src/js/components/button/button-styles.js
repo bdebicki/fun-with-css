@@ -21,10 +21,11 @@ export const Button = styled.button`
 	justify-content: center;
 	font-family: ${FONT_FAMILY_BASE};
 	text-decoration: none;
+	cursor: pointer;
 	user-select: none;
 	
-	${props => {
-	  if (props.neutralStyle && !props.lightWeight) {
+	${props => { // default style + color versions
+	  if (!props.lightWeight && props.neutralStyle) {
 	    return `
 	      border-color: ${SILVER.BASE};
 	      background: ${SILVER.BASE};
@@ -36,7 +37,7 @@ export const Button = styled.button`
           color: ${SILVER.LIGHTEN_5};
 	      }
 	    `;
-    } else if (props.successStyle && !props.lightWeight) {
+    } else if (!props.lightWeight && props.successStyle) {
       return `
 	      border-color: ${GREEN.BASE};
 	      background: ${GREEN.BASE};
@@ -47,7 +48,7 @@ export const Button = styled.button`
           background: ${GREEN.LIGHTEN_10};
 	      }
 	    `;
-    } else if (props.dangerStyle && !props.lightWeight) {
+    } else if (!props.lightWeight && props.dangerStyle) {
       return `
 	      border-color: ${RED.LIGHTEN_5};
 	      background: ${RED.LIGHTEN_5};
@@ -72,11 +73,47 @@ export const Button = styled.button`
     }
   }}
 		
-	${props => { // weight styles props
-	  if (props.lightWeight) {
+	${props => { // weight style + color versions
+    if (props.lightWeight && props.neutralStyle) {
+      return `
+        border-color: ${SILVER.DARKEN_5};
+        background: none;
+        color: ${GRAY.LIGHTEN_10};
+  
+        &:hover {
+          border-color: ${SILVER.LIGHTEN_1};
+          background: ${SILVER.LIGHTEN_1};
+          color: ${GRAY.LIGHTEN_5};
+        }
+      `;
+    } else if (props.lightWeight && props.successStyle) {
+      return `
+        border-color: ${GREEN.LIGHTEN_15};
+        background: ${GREEN.PALE};
+        color: ${GREEN.BASE};
+  
+        &:hover {
+          border-color: ${GREEN.BASE};
+          background: ${GREEN.BASE};
+          color: #fff;
+        }
+      `;
+    } else if (props.lightWeight && props.dangerStyle) {
+      return `
+        border-color: ${RED.LIGHTEN_25};
+        background: ${RED.PALE};
+        color: ${RED.DARKEN_5};
+  
+        &:hover {
+          border-color: ${RED.DARKEN_5};
+          background: ${RED.DARKEN_5};
+          color: #fff;
+        }
+      `;
+    } else if (props.lightWeight) {
       return `
 	      border-color: ${BLUE.LIGHTEN_30};
-        background: none;
+        background: ${BLUE.PALE};
         color: ${BLUE.BASE};
   
         &:hover {
@@ -84,7 +121,7 @@ export const Button = styled.button`
           background: ${BLUE.BASE};
           color: #fff;
         }
-    `;
+      `;
     }
   }}
 	

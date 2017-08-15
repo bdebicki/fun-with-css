@@ -12,6 +12,7 @@ export const GRAY = {
 
 export const BLUE = {
   BASE: '#006cff',
+  PALE: '#f0f6ff',
   LIGHTEN_30: '#99c4ff',
   LIGHTEN_10: '#3389ff'
 };
