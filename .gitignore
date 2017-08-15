@@ -3,5 +3,8 @@
 npm-debug.log
 /node_modules
 /css-modules/node_modules
+/css-modules/public
 /styled-components/node_modules
 /styled-components/public
+/webpack-build/node_modules
+/webpack-build/public
