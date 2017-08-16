@@ -18,6 +18,11 @@ const config = {
         test: /\.(jsx|js)$/,
         loader: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.less$/i,
+        use: ['style-loader', 'css-loader', 'less-loader'],
+        exclude: /node_modules/
       }
     ]
   },

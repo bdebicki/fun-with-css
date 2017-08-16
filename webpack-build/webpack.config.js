@@ -23,7 +23,6 @@ const config = {
       {
         test: /\.less$/i,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
           use: ['css-loader', 'less-loader']
         })
       }
