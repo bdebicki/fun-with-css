@@ -20,6 +20,7 @@ export const Headline = styled.h1`
 
 export const ElementContainer = styled.div`
   margin-bottom: 30px;
+  position: relative;
 `;
 
 export const ElementDescription = styled.p`

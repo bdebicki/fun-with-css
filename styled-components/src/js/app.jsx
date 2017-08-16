@@ -2,7 +2,9 @@ import React from 'react';
 import styled, { injectGlobal } from 'styled-components';
 import { ReactWrapper, Headline, Title, ElementContainer, ElementDescription } from './layout/layoutBuilders-styles';
 import { Button } from './components/button/button-styles';
-import { FONT_FAMILY_BASE, FONT_SIZE_BASE, LINE_HEIGHT_BASE, TEXT_COLOR_BASE } from './tokens/typography'
+import { FONT_FAMILY_BASE, FONT_SIZE_BASE, LINE_HEIGHT_BASE, TEXT_COLOR_BASE } from './tokens/typography';
+
+import '../less/customClasses.less';
 
 injectGlobal`
   * {
@@ -129,6 +131,14 @@ export default class App extends React.Component {
         <ElementContainer>
           <Button lightWeight smallSize strechedSize>boczek</Button>
           <ElementDescription>light-weight small-size stretched-size button</ElementDescription>
+        </ElementContainer>
+        <ElementContainer className="staticHeight">
+          <Button className="customClass">boczek</Button>
+          <ElementDescription>default button with custom class</ElementDescription>
+        </ElementContainer>
+        <ElementContainer className="staticHeight">
+          <Button lightWeight className="customClass">boczek</Button>
+          <ElementDescription>light-weight button with custom class</ElementDescription>
         </ElementContainer>
       </ReactWrapper>
     )
