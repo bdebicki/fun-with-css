@@ -2,12 +2,12 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import '../../less/components/button.less';
+import btn from '../../less/components/button.less';
 
 export default class Button extends React.Component {
   render() {
     const classes = classNames(
-      'btn',
+      btn.btn,
       this.props.className
     );
 

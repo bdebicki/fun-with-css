@@ -8,8 +8,8 @@ export default class App extends React.Component {
   render() {
     return (
       <div className={layoutBuilders.reactWrapper}>
-        <h5>fun with css</h5>
-        <h1>css modules</h1>
+        <h5 className={layoutBuilders.title}>fun with css</h5>
+        <h1 className={layoutBuilders.headline}>css modules</h1>
         <div className={layoutBuilders.elementContainer}>
           <Button>boczek</Button>
           <p className={layoutBuilders.elementDescription}>boczek</p>
