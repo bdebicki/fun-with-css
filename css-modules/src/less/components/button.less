@@ -1,12 +1,12 @@
+@import '../core/colors';
+@import '../core/typography';
+
 @btnSize-base: 34px;
 @btnSize-small: 24px;
 @btnSize-large: 50px;
 @btnPadding-base: 0 20px;
 @btnPadding-small: 0 10px;
 @btnPadding-large: 0 24px;
-
-// TODO: Check is this possible to remove `size` and `color` variables from `.icon-*`
-// TODO: What about :focus and :active state?
 
 .btn {
 	display: flex;
@@ -28,17 +28,7 @@
 		background: @blue-lighten10;
 	}
 
-	&[class*='icon-'] {
-		&:before {
-			margin-right: 10px;
-			position: static !important;
-			color: inherit !important;
-			font-size: 100% !important;
-			line-height: 100% !important;
-		}
-	}
-
-	&.light-weight {
+	&.lightWeight {
 		border: 1px solid @blue-lighten30;
 		background: none;
 		color: @blue-base;
@@ -49,7 +39,7 @@
 			color: #fff;
 		}
 
-		&.neutral-style {
+		&.neutralStyle {
 			border-color: @silver-darken5;
 			background: none;
 
@@ -59,7 +49,7 @@
 				color: @gray-lighten5;
 			}
 		}
-		&.success-style {
+		&.successStyle {
 			border-color: fade(@green-base, 30%);
 			background: @green-pale;
 			color: @green-base;
@@ -70,7 +60,7 @@
 				color: #fff;
 			}
 		}
-		&.danger-style {
+		&.dangerStyle {
 			border-color: fade(@red-base, 30%);
 			background: @red-pale;
 			color: @red-darken5;
@@ -81,15 +71,9 @@
 				color: #fff;
 			}
 		}
-
-		&.is-working {
-			&:after {
-				border-color: @blue-base;
-			}
-		}
 	}
 
-	&.neutral-style {
+	&.neutralStyle {
 		background: @silver-base;
 		color: @gray-lighten10;
 
@@ -98,14 +82,14 @@
 			color: @gray-lighten5;
 		}
 	}
-	&.success-style {
+	&.successStyle {
 		background: @green-base;
 
 		&:hover {
 			background: @green-lighten10;
 		}
 	}
-	&.danger-style {
+	&.dangerStyle {
 		background: @red-lighten5;
 
 		&:hover {
@@ -113,40 +97,17 @@
 		}
 	}
 
-	&.large-size {
+	&.largeSize {
 		height: @btnSize-large;
 		padding: @btnPadding-large;
 	}
-	&.small-size {
+	&.smallSize {
 		height: @btnSize-small;
 		padding: @btnPadding-small;
 		font-size: @fontSize-textSmall;
 		line-height: @lineHeight-textSmall;
-
-		&[class*='icon-'] {
-			&:before {
-				margin-right: 5px;
-			}
-		}
 	}
-	&.stretched-size {
+	&.stretchedSize {
 		width: 100%;
-	}
-
-	&.is-working {
-		position: relative;
-		color: transparent;
-		pointer-events: none;
-
-		.spinner(@color: #fff, @size: 16px, @weight: 2px);
-
-		&[class*='icon-'] {
-			&:before {
-				display: none;
-			}
-		}
-	}
-	&:disabled {
-		.disabled(@opacity: 0.4);
 	}
 }
