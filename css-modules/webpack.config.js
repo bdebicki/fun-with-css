@@ -1,4 +1,5 @@
 const path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
@@ -21,23 +22,26 @@ const config = {
       },
       {
         test: /\.less$/i,
-        use: [
-          {
-            loader: 'style-loader'
-          }, {
-            loader: 'css-loader',
-            query: {
-              modules: true,
-              localIdentName: '[name]-[local]-[hash:base64:5]'
+        use: ExtractTextPlugin.extract({
+          use: [
+            {
+              loader: 'css-loader',
+              query: {
+                modules: true,
+                localIdentName: '[name]-[local]-[hash:base64:5]'
+              }
+            }, {
+              loader: 'less-loader'
             }
-          }, {
-            loader: 'less-loader'
-          }
-        ]
+          ]
+        })
       }
     ]
   },
   plugins: [
+    new ExtractTextPlugin({
+      filename: 'style.css',
+    }),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
