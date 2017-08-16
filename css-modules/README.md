@@ -1,6 +1,6 @@
-# fun-with-css / styled-components
+# fun-with-css / css modules
 
-based on: [webpack](https://webpack.github.io/) & [styled-components](https://www.styled-components.com/)
+based on: [webpack](https://webpack.github.io/) & [css modules](https://github.com/css-modules/css-modules)
 
 ## how to start
 1. ` npm install` - install dependencies <br/>
